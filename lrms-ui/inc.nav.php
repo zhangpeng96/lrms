@@ -30,7 +30,8 @@
 		</form>
 		<ul class="nav menu" id="nav-menu">
 			<li><a href="status.php"><span class="glyphicon glyphicon-dashboard"></span> 开始</a></li>
-			<li><a href="config.php"><span class="glyphicon glyphicon-th"></span> 系统配置</a></li>
+			<li><a href="config.php"><span class="glyphicon glyphicon-th"></span> 系统配置</a></li>            
+			<li><a href="guaranty.php"><span class="glyphicon glyphicon-th"></span> 保证书设置</a></li>
 			<li><a href="seats.php"><span class="glyphicon glyphicon-stats"></span> 出勤月统</a></li>
 			<li><a href="student.php"><span class="glyphicon glyphicon-list-alt"></span> 学生花名册</a></li>
 			<li role="presentation" class="divider"></li>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>系统配置 - LRMS</title>
+<title>保证书内容设置 - LRMS</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -14,19 +14,21 @@
 <![endif]-->
 
 </head>
+
 <body>
 <? require('inc.nav.php');?>
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
   <div class="row">
     <ol class="breadcrumb">
       <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-      <li class="active">系统配置</li>
+      <li class="active">保证书设置</li>
     </ol>
   </div>
-  <!--/.row-->  
+  <!--/.row-->
+  
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">系统配置</h1>
+      <h1 class="page-header">保证书设置</h1>
     </div>
   </div>
   <!--/.row-->
@@ -42,71 +44,67 @@
           <div class="col-md-6">
             <form role="form">
               <div class="form-group">
-                <label>系统总开关（当前：开）</label>
-                <select class="form-control">
-                  <option>开</option>
-                  <option>关</option>
-                </select>
-              </div>
+              <label>保证书内容设置</label>
+              <textarea class="form-control" rows="6"></textarea>
               <hr>
               <div class="form-group">
-                <label>补选总开关（当前：开）</label>
-                <select class="form-control">
-                  <option>开</option>
-                  <option>关</option>
-                </select>
-                <label>补选座位数目（还剩余：83）</label>
-                <input class="form-control" placeholder="当前设置为：55">
-                <label>拒绝已成功的选座（当前：开）</label>
-                <select class="form-control">
-                  <option>开</option>
-                  <option>关</option>
-                </select>
-                <label>拒绝出勤不合格的选座（当前：关）</label>
+                <label>保证书问题设置</label>
                 <select class="form-control">
                   <option>关</option>
-                  <option>开（10天）</option>
-                  <option>开（20天）</option>
-                  <option>开（1月）</option>
-                  <option>开（2月）</option>
-                  <option>开（3月）</option>
+                  <option>选择题</option>
+                  <option>填空题</option>
                 </select>
-                <label>座位自动分配（当前：关）</label>
+                <label>确认阅读验证设置</label>
                 <select class="form-control">
                   <option>关</option>
-                  <option>开</option>
+                  <option>5秒</option>
+                  <option>10秒</option>
+                  <option>20秒</option>
+                  <option>30秒</option>
+                  <option>1分钟</option>
                 </select>
+                <hr>
               </div>
             </form>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>选号总开关（当前：开）</label>
-              <select class="form-control">
-                <option>开</option>
-                <option>关</option>
-              </select>
-              <label>选号方式（当前：微信）</label>
-              <select class="form-control">
-                <option>微信</option>
-                <option>扫码</option>
-              </select>
-              <label>选号加密方式（当前：MD5）</label>
-              <select class="form-control">
-                <option>MD5</option>
-                <option>无</option>
-                <option>base64</option>
-              </select>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <div class="input-group has-warning"> <span class="input-group-addon">题干</span>
+              <input type="text" class="form-control" placeholder="这里输入题干">
+            </div>
+            <div class="input-group has-success"> <span class="input-group-addon">A.</span>
+              <input type="text" class="form-control" placeholder="这里输入正确答案">
+            </div>
+            <div class="input-group has-error"> <span class="input-group-addon">B.</span>
+              <input type="text" class="form-control" placeholder="这里输入错误答案">
+            </div>
+            <div class="input-group has-error"> <span class="input-group-addon">C.</span>
+              <input type="text" class="form-control" placeholder="这里输入错误答案">
+            </div>
+            <div class="input-group has-error"> <span class="input-group-addon">D.</span>
+              <input type="text" class="form-control" placeholder="这里输入错误答案">
             </div>
           </div>
-          </form>
+          <hr>
+          <div class="form-group">
+            <div class="input-group has-warning"> <span class="input-group-addon">题干</span>
+              <input type="text" class="form-control" placeholder="这里输入题干">
+            </div>
+            <div class="input-group has-success"> <span class="input-group-addon">答案</span>
+              <input type="text" class="form-control" placeholder="这里输入正确答案">
+            </div>
+          </div>
         </div>
       </div>
+      </form>
     </div>
-    <!-- /.col--> 
   </div>
-  <!-- /.row --> 
-  
+</div>
+<!-- /.col-->
+</div>
+<!-- /.row -->
+
 </div>
 <!--/.main--> 
 
@@ -132,7 +130,7 @@
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
 		$(function(){
-			$("#nav-menu li:eq(1)").addClass("active");
+			$("#nav-menu li:eq(2)").addClass("active");
 			$(".btn-primary").click(function(){
 				$(".alert").show();
 			});
