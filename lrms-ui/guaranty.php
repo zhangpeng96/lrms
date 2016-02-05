@@ -45,23 +45,23 @@
             <form role="form">
               <div class="form-group">
               <label>保证书内容设置</label>
-              <textarea class="form-control" rows="6"></textarea>
+              <textarea name="main-text" class="form-control" rows="6"></textarea>
               <hr>
               <div class="form-group">
                 <label>保证书问题设置</label>
-                <select class="form-control">
-                  <option>关</option>
-                  <option>选择题</option>
-                  <option>填空题</option>
+                <select name="question-type" class="form-control">
+                  <option value="0">关</option>
+                  <option value="1">选择题</option>
+                  <option value="2">填空题</option>
                 </select>
                 <label>确认阅读验证设置</label>
-                <select class="form-control">
-                  <option>关</option>
-                  <option>5秒</option>
-                  <option>10秒</option>
-                  <option>20秒</option>
-                  <option>30秒</option>
-                  <option>1分钟</option>
+                <select name="confirm-delay" class="form-control">
+                  <option value="0">关</option>
+                  <option value="5">5秒</option>
+                  <option value="10">10秒</option>
+                  <option value="20">20秒</option>
+                  <option value="30">30秒</option>
+                  <option value="60">1分钟</option>
                 </select>
                 <hr>
               </div>

@@ -144,7 +144,7 @@
 		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
 		}(window.jQuery);
 		$(function(){			
-			$("#nav-menu li:eq(2)").addClass("active");
+			$("#nav-menu li:eq(3)").addClass("active");
 		});
 		$(window).on('resize', function () {
 		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')

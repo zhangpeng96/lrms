@@ -89,7 +89,7 @@
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
 		$(function(){			
-			$("#nav-menu li:eq(3)").addClass("active");
+			$("#nav-menu li:eq(4)").addClass("active");
 			$("div").dblclick(function(){
 				$(".alert").show();
 			});

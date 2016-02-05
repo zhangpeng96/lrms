@@ -1,0 +1,20 @@
+[
+    {
+        "main-text": ""
+    },
+    {
+        "question-type": 1,
+        "confirm-delay": 10
+    },
+    {
+        "context1": "",
+        "options1": "|||",
+        "result1": "",
+        "context2": "",
+        "options2": "|||",
+        "result2": "",
+        "context3": "",
+        "options3": "|||",
+        "result3": ""
+    }
+]
