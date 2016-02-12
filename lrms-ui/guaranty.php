@@ -5,11 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>保证书内容设置 - LRMS</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
 <script src="js/guaranty_config.min.js"></script>
 <script>
 		!function ($) {
@@ -26,6 +24,7 @@
 		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
 		$(function(){
+      $(".alert").hide();
 			$("#nav-menu li:eq(2)").addClass("active");
       $(".close").click(function(){
         $(this).parent().hide();

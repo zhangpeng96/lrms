@@ -5,14 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>系统配置 - LRMS</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
-
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
-
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main_config.min.js"></script>
 </head>
 <body>
 <? require('inc.nav.php');?>
@@ -35,67 +31,61 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading" style="float:right">
-          <button type="submit" class="btn btn-primary">生效</button>
+          <button type="submit" id="submit" class="btn btn-primary">生效</button>
           <button type="reset" class="btn btn-default">取消</button>
         </div>
         <div class="panel-body">
           <div class="col-md-6">
             <form role="form">
               <div class="form-group">
-                <label>系统总开关（当前：开）</label>
-                <select class="form-control">
-                  <option>开</option>
-                  <option>关</option>
+                <label>系统总开关（当前：<opr></opr>）</label>
+                <select class="form-control" name="mainSwitch">
+                  <option value="1">开</option>
+                  <option value="0">关</option>
                 </select>
               </div>
               <hr>
               <div class="form-group">
-                <label>补选总开关（当前：开）</label>
-                <select class="form-control">
-                  <option>开</option>
-                  <option>关</option>
+                <label>补选总开关（当前：<opr></opr>）</label>
+                <select class="form-control" name="additionSwitch">
+                  <option value="1">开</option>
+                  <option value="0">关</option>
                 </select>
-                <label>补选座位数目（还剩余：83）</label>
-                <input class="form-control" placeholder="当前设置为：55">
-                <label>拒绝已成功的选座（当前：开）</label>
-                <select class="form-control">
-                  <option>开</option>
-                  <option>关</option>
+                <label>补选座位数目（还剩余：<opr></opr>）</label>
+                <input class="form-control" placeholder="当前设置为：" name="additionNumber">
+                <label>拒绝已成功的选座（当前：<opr></opr>）</label>
+                <select class="form-control" name="denySuccess">
+                  <option value="1">开</option>
+                  <option value="0">关</option>
                 </select>
-                <label>拒绝出勤不合格的选座（当前：关）</label>
-                <select class="form-control">
-                  <option>关</option>
-                  <option>开（10天）</option>
-                  <option>开（20天）</option>
-                  <option>开（1月）</option>
-                  <option>开（2月）</option>
-                  <option>开（3月）</option>
+                <label>拒绝出勤不合格的选座天数（当前：<opr></opr>）</label>
+                <select class="form-control" name="denyFault">
+                  <option value="0">关</option>
+                  <option value="10">开（10天）</option>
+                  <option value="20">开（20天）</option>
+                  <option value="30">开（1月）</option>
+                  <option value="60">开（2月）</option>
+                  <option value="90">开（3月）</option>
                 </select>
-                <label>座位自动分配（当前：关）</label>
-                <select class="form-control">
-                  <option>关</option>
-                  <option>开</option>
+                <label>座位自动分配（当前：<opr></opr>）</label>
+                <select class="form-control" name="autoAssignment">
+                  <option value="0">关</option>
+                  <option value="1">开</option>
                 </select>
               </div>
             </form>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label>选号总开关（当前：开）</label>
-              <select class="form-control">
-                <option>开</option>
-                <option>关</option>
+              <label>选号总开关（当前：<opr></opr>）</label>
+              <select class="form-control" name="seatSwitch">
+                <option value="1">开</option>
+                <option value="0">关</option>
               </select>
-              <label>选号方式（当前：微信）</label>
-              <select class="form-control">
-                <option>微信</option>
-                <option>扫码</option>
-              </select>
-              <label>选号加密方式（当前：MD5）</label>
-              <select class="form-control">
-                <option>MD5</option>
-                <option>无</option>
-                <option>base64</option>
+              <label>选号方式（当前：<opr></opr>）</label>
+              <select class="form-control" name="seatMethod">
+                <option value="wechat">微信</option>
+                <option value="qrcode">扫码</option>
               </select>
             </div>
           </div>
@@ -109,14 +99,6 @@
   
 </div>
 <!--/.main--> 
-
-<script src="js/jquery-1.11.1.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/chart.min.js"></script> 
-<script src="js/chart-data.js"></script> 
-<script src="js/easypiechart.js"></script> 
-<script src="js/easypiechart-data.js"></script> 
-<script src="js/bootstrap-datepicker.js"></script> 
 <script>
 		!function ($) {
 			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
@@ -133,12 +115,6 @@
 		})
 		$(function(){
 			$("#nav-menu li:eq(1)").addClass("active");
-			$(".btn-primary").click(function(){
-				$(".alert").show();
-			});
-			$("div .glyphicon-remove").click(function(){
-				$(this.parent).hide();
-			});
 		});
 	</script>
 </body>

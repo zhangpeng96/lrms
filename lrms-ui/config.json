@@ -1,17 +1,1 @@
-[
-    {
-        "main-switch": true
-    },
-    {
-        "addition-switch": true,
-        "addition-number": 50,
-        "deny-success": false,
-        "deny-fault": true,
-        "auto-assignment": false
-    },
-    {
-        "seat-switch": true,
-        "seat-method": "wechat",
-        "seat-encrypt": "MD5"
-    }
-]
+[{"mainSwitch":"1"},{"additionSwitch":"1","additionNumber":"233","denySuccess":"1","denyFault":"10","autoAssignment":"1"},{"seatSwitch":"1","seatMethod":"wechat"}]
