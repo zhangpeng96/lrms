@@ -1,0 +1,16 @@
+[
+    {
+        "mainSwitch": 0
+    },
+    {
+        "additionSwitch": 1,
+        "additionNumber": 50,
+        "denySuccess": 0,
+        "denyFault": 0,
+        "autoAssignment": 0
+    },
+    {
+        "seatSwitch": 1,
+        "seatMethod": "wechat"
+    }
+]

@@ -73,7 +73,6 @@
             <select name="questionType" class="form-control">
               <option value="0">关</option>
               <option value="1">选择题</option>
-              <option value="2">填空题</option>
             </select>
             <label>确认阅读验证设置</label>
             <select name="confirmDelay" class="form-control">
@@ -121,20 +120,6 @@
               <input type="text" class="form-control" placeholder="这里输入错误答案" name="options2">
             </div>
           </div>
-          <div class="form-group" id="clozePanel">
-            <div class="input-group has-warning"> <span class="input-group-addon">题干</span>
-              <input type="text" class="form-control" placeholder="这里输入题干" name="context1">
-            </div>
-            <div class="input-group has-success"> <span class="input-group-addon">答案</span>
-              <input type="text" class="form-control" placeholder="这里输入正确答案" name="result1">
-            </div>
-            <br>
-            <div class="input-group has-warning"> <span class="input-group-addon">题干</span>
-              <input type="text" class="form-control" placeholder="这里输入题干" name="context2">
-            </div>
-            <div class="input-group has-success"> <span class="input-group-addon">答案</span>
-              <input type="text" class="form-control" placeholder="这里输入正确答案" name="result2">
-            </div>
           </div>
         </div>
       </div>

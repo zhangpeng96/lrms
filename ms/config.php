@@ -7,8 +7,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script> 
 <script src="js/bootstrap.min.js"></script>
-<script src="js/main_config.min.js"></script>
 </head>
 <body>
 <? require('inc.nav.php');?>
@@ -46,19 +46,17 @@
               </div>
               <hr>
               <div class="form-group">
-                <label>补选总开关（当前：<opr></opr>）</label>
+                <label>选座总开关（当前：<opr></opr>）</label>
                 <select class="form-control" name="additionSwitch">
                   <option value="1">开</option>
                   <option value="0">关</option>
                 </select>
-                <label>补选座位数目（还剩余：<opr></opr>）</label>
-                <input class="form-control" placeholder="当前设置为：" name="additionNumber">
                 <label>拒绝已成功的选座（当前：<opr></opr>）</label>
                 <select class="form-control" name="denySuccess">
                   <option value="1">开</option>
                   <option value="0">关</option>
                 </select>
-                <label>拒绝出勤不合格的选座天数（当前：<opr></opr>）</label>
+                <label>拒绝出勤不合格的选座（当前：<opr></opr>）</label>
                 <select class="form-control" name="denyFault">
                   <option value="0">关</option>
                   <option value="10">开（10天）</option>
@@ -67,26 +65,19 @@
                   <option value="60">开（2月）</option>
                   <option value="90">开（3月）</option>
                 </select>
-                <label>座位自动分配（当前：<opr></opr>）</label>
-                <select class="form-control" name="autoAssignment">
-                  <option value="0">关</option>
-                  <option value="1">开</option>
-                </select>
+
               </div>
             </form>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <label>选号总开关（当前：<opr></opr>）</label>
-              <select class="form-control" name="seatSwitch">
-                <option value="1">开</option>
-                <option value="0">关</option>
-              </select>
-              <label>选号方式（当前：<opr></opr>）</label>
-              <select class="form-control" name="seatMethod">
-                <option value="wechat">微信</option>
-                <option value="qrcode">扫码</option>
-              </select>
+                <label>排队总开关（当前：<? echo "开"; ?>）</label>
+                <select class="form-control" name="autoAssignment">
+                  <option value="0">关</option>
+                  <option value="1">开</option>
+                </select>      
+                <label>剩余座位数</label>
+                <text></text>                    
             </div>
           </div>
           </form>
