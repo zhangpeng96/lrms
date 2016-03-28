@@ -27,24 +27,39 @@
 
 
 </style>
+<?php
+   $json = file_get_contents('guaranty.json');
+   $data = json_decode($json);
+?>
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> 
 </head>
 <body class="bg">
 <div class="wrapper">
   <div class="content" id="page-1">
-    <div>
+    <div>SIGN</div>
+    <div><? echo $data -> mainText; ?>
     </div>
-    <div>
-    </div>
+    <div class="gua-confirm">确认</div>
   </div>
   <div class="content" id="page-2">
     <div></div>
     <div class="question">
-      <? echo "demo text"; ?>
+      <? echo $data -> question[0] -> context; ?>
     </div>
   </div>
 </div>
 
 </div>
 </body>
+<script>
+function delay(){
+  var state = 0;
+  var time = 60;
+  function run(){
+    time --;
+    $(".gua-confirm").text('Time' + time);
+  }  
+}
+delay();window.setTimeout(run,1000);
+</script>
 </html>

@@ -1,0 +1,15 @@
+{
+    "mainText": "test",
+    "questionType": 2,
+    "delay": 50,
+    "question": [
+        {
+            "context": "IF",
+            "options": [
+                "wordpress",
+                "php"
+            ],
+            "answer": "admin@jb51.net"
+        }
+    ]
+}
