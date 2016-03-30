@@ -24,22 +24,6 @@
   padding: 12%;
   width: 70%;
 }
-.icon-seat {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-  background: url('assets/svg/seat.svg');
-  background-size: 48px 48px;
-  color: #fff;
-  text-align: center;
-}
-.avali{
-  fill: #94d31b; 
-}
-.empty {
-  color: #888;
-}
-
 
 </style>
 
@@ -47,22 +31,7 @@
 <body class="bg">
 <div class="wrapper">
   <div class="content">
-    <div class="icon-seat avali">1</div>
-    <div class="icon-seat avali">2</div>
-    <div class="icon-seat avali">3</div>
-    <div class="icon-seat avali">4</div>
-    <div class="icon-seat avali">5</div>
-    <div class="icon-seat avali">6</div>
-    <div class="icon-seat avali">7</div>
-    <div class="icon-seat avali">8</div>
-    <div class="icon-seat avali">9</div>
-    <div class="icon-seat avali">10</div>
-    <div class="icon-seat avali">11</div>
-    <div class="icon-seat avali">12</div>
-    <div class="icon-seat avali">13</div>
-    <div class="icon-seat avali">14</div>
-    <div class="icon-seat avali">22</div>
-    <div class="icon-seat avali">23</div>
+<embed src="assets/svg/seat_demo.svg" type="image/svg+xml" />
     <div>
     </div>
   </div>
@@ -74,7 +43,7 @@
 <script>
   $(".icon-seat").click(function(){
     var uid = 20140333;
-    $.post('select.php',
+    $.post('core/select.php',
       {
         'order': $(this).val(),
         'uid': uid
