@@ -13,10 +13,37 @@ class weChat
         	exit;
         }
     }
-
     public function responseMsg()
     {
 		//get post data, May be due to the different environments
+        function register($input, $openID){
+            if(!$input){
+                return -1;
+            }else{
+                $regData = explode("+",$input);
+                if (count($regData) <= 1){
+                    return 0;
+                }else{
+                    $name = $regData[0];
+                    $id = $regData[1];
+                    include('ctr_user.php');
+                    $content = array(
+                        'userID' => $id,
+                        'ecardID' => $id,
+                        'name' => $name,
+                        'descri' => '',
+                        'regTime' => time(),
+                        'status' => 1);
+                    addNewUser($openID, $content);
+                    $fp = fopen('id.txt',"a");
+                    fputs($fp,$openID.'|'.$name.'|'.$id);
+                    fclose($fp);                
+                    return 1;
+                }
+            }
+        }
+
+
 		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
       	//extract post data
 		if (!empty($postStr)){
@@ -35,6 +62,7 @@ class weChat
 							<Content><![CDATA[%s]]></Content>
 							<FuncFlag>0</FuncFlag>
 							</xml>";             
+                register($keyword, $fromUsername);
 				if(!empty( $keyword ))
                 {
               		$msgType = "text";

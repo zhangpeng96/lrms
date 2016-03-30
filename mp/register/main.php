@@ -1,5 +1,7 @@
 <?php
 /*
+*	@name:register function
+* 	@version: 1.1.1
 *	返回错误码：0输入错误，1返回成功，-1其它错误
 */
 	
