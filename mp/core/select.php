@@ -41,7 +41,11 @@ function refreshList(){
 		$fp = fopen('../database/seat_status.json',"w");
         fputs($fp,$foo_json);
         fclose($fp);
-
+////////////   Debug Thread		///////////
+		$fb = fopen('../database/debug.txt',"a");
+        fputs($fb,date("m/d H:i:s")." refreshJSON <br>");
+        fclose($fb);   
+//////////////////////////////////////////
 
 }
 function selectSeat($uid, $order){
