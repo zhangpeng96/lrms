@@ -42,6 +42,32 @@ class weChat
                 }
             }
         }
+        function transText($keyword, $fromUsername){
+            if($keyword=='1'){
+                $transContent = array(
+                    'type' => 'text',
+                    'str' => '菜单列表'
+                );
+            }else{                
+                switch(register($keyword, $fromUsername)){
+                    case 0:
+                        $transContent = array(
+                            'type' => 'text',
+                            'str' => '输入错误'
+                        );
+                    break;
+                    case 1:
+                        $transContent = array(
+                            'type' => 'text',
+                            'str' => '成功绑定！'
+                        );                    
+                    break;
+                    default:
+                    $transContent = array('type' => 'text','str' => 'data3');
+                }
+            }
+            return $transContent;            
+        }
 
 
 		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
@@ -62,11 +88,12 @@ class weChat
 							<Content><![CDATA[%s]]></Content>
 							<FuncFlag>0</FuncFlag>
 							</xml>";             
-                register($keyword, $fromUsername);
+                
 				if(!empty( $keyword ))
                 {
-              		$msgType = "text";
-                	$contentStr = "This is a testing message!";
+                    $strData = transText($keyword, $fromUsername);
+              		$msgType = $strData['type'];
+                	$contentStr = $strData['str'];
                 	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 	echo $resultStr;
                 }else{
