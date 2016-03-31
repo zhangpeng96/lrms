@@ -43,12 +43,43 @@ class weChat
             }
         }
         function transText($keyword, $fromUsername){
-            if($keyword=='1'){
+           include('ctr_user.php');
+            // 不知道是否能调用同级函数中的include
+            if($keyword=="功能" || $keyword=="菜单" || $keyword=="m" ){
                 $transContent = array(
                     'type' => 'text',
-                    'str' => '菜单列表'
+                    'str' => "请回复以下数字办理考研自习室业务：\n 1.绑定帐号\n 2.选座\n 3.座位排队\n 4.关注官方微博\n(ฅ• . •ฅ)[测试消息，认真你就输辣]\n警察蜀黍，就是他做的系统\n zhangpeng96.com"
                 );
-            }else{                
+                // 以数组的形式返回数据的内容和类型，注意转义符需要用双引号
+            }else if(strlen($keyword) < 2){
+                $uid = getUserID($fromUsername);
+                switch($keyword){
+                    case 1:
+                        $transContent = array(
+                            'type' => 'text',
+                            'str' => "首次关注，请绑定信息。\n发送 姓名+学号（如“张鹏+20140349”）绑定帐号。"
+                        );
+                    break;
+                    case 2:
+                        $transContent = array(
+                            'type' => 'text',
+                            'str' => "戳开链接：http://tikumm.duapp.com/mp/select.php?uid=$uid"
+                        );
+                    break;
+                    case 3:
+                        $transContent = array(
+                            'type' => 'text',
+                            'str' => "戳开链接：http://tikumm.duapp.com/mp/queue.php?uid=$uid"
+                        );
+                    break;                    
+                    case 4:
+                        $transContent = array(
+                            'type' => 'text',
+                            'str' => "戳开链接：http://weibo.com/u/5231945858"
+                        );
+                    break;
+                }
+            }else{           
                 switch(register($keyword, $fromUsername)){
                     case 0:
                         $transContent = array(
@@ -62,8 +93,6 @@ class weChat
                             'str' => '成功绑定！'
                         );                    
                     break;
-                    default:
-                    $transContent = array('type' => 'text','str' => 'data3');
                 }
             }
             return $transContent;            

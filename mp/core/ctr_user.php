@@ -25,6 +25,15 @@ function addNewUser($openID, $content){
 	);
 	// 注意char型数据库值需要用引号包围，否则无法录入
 }
+function getUserID($openID){
+	$data = new SQlite('../database/global.db');
+	$str = $data -> Execute("SELECT ecardID
+	FROM user WHERE openID = '$openID'");
+	return $str[0];
+}
+
+//echo getUserID('ohCgVuNDgJ7y9jXpg0-LFFg-0uxU');
+
 /*
 $openID = 'ohCgVuNDgJ7y9jXpg0-LFFg-0uxU';
 $content = array(
